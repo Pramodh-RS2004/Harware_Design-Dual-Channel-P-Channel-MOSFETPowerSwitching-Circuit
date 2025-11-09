@@ -35,7 +35,7 @@ The design employs two P-channel MOSFETs (**M1**, **M2**) for automatic high-sid
 - **C1–C3** capacitors manage load voltage stability and filter transients.
 
 <p align="center">
-  <img src="schematic.png" alt="Dual-Channel MOSFET Power Switching Circuit" width="700" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
+  <img src="dual switching circuit.png" alt="Dual-Channel MOSFET Power Switching Circuit" width="700" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
 </p>
 
 ---

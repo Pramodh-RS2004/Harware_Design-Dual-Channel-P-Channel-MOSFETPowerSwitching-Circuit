@@ -1,14 +1,4 @@
-<p align="center">
-  <a href="https://github.com/Pramodh-RS2004/Dual-Channel-MOSFET-Power-Switching-Circuit">
-    <img src="https://img.shields.io/badge/Project%20Status-Complete-brightgreen?style=for-the-badge&logo=github" alt="Project Status" />
-  </a>
-  <a href="report.pdf">
-    <img src="https://img.shields.io/badge/Report-View%20PDF-red?style=for-the-badge&logo=adobe" alt="View Report" />
-  </a>
-  <a href="#%E2%9A%99%EF%B8%8F-license">
-    <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=opensourceinitiative" alt="License" />
-  </a>
-</p>
+
 
 <h1 align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Arial&size=30&color=F7931A&center=true&vCenter=true&width=900&height=60&lines=⚡+Power+Switching+Circuit+w%2F+P-Channel+MOSFETs+⚡;Hardware+Design+%7C+Power+Electronics+%7C+Embedded+Systems" alt="Typing Animation" />

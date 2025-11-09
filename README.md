@@ -38,7 +38,6 @@ The design employs two P-channel MOSFETs (**M1**, **M2**) for automatic high-sid
   <img src="dual switching circuit.png" alt="Dual-Channel MOSFET Power Switching Circuit" width="700" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
 </p>
 
----
 
 
 

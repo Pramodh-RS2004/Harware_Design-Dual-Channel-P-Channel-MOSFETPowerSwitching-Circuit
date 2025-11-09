@@ -1,316 +1,130 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dual-Channel P-Channel MOSFET Power Switching Circuit</title>
-    <script src="https://cdn.jsdelivr.net/npm/react@18.0.0/umd/react.development.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.0.0/umd/react-dom.development.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
-        .orbitron {
-            font-family: 'Orbitron', sans-serif;
-        }
-        .glow-text {
-            text-shadow: 0 0 10px rgba(0, 194, 203, 0.7);
-        }
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        .blink-cursor {
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
-        }
-    </style>
-</head>
-<body>
-    <div id="root"></div>
+<p align="center">
+  <a href="https://github.com/Pramodh-RS2004/Dual-Channel-MOSFET-Power-Switching-Circuit">
+    <img src="https://img.shields.io/badge/Project%20Status-Complete-brightgreen?style=for-the-badge&logo=github" alt="Project Status" />
+  </a>
+  <a href="report.pdf">
+    <img src="https://img.shields.io/badge/Report-View%20PDF-red?style=for-the-badge&logo=adobe" alt="View Report" />
+  </a>
+  <a href="#%E2%9A%99%EF%B8%8F-license">
+    <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=opensourceinitiative" alt="License" />
+  </a>
+</p>
 
-    <script type="text/babel">
-        const App = () => {
-            return (
-                <div className="min-h-screen bg-gray-900 text-white p-4">
-                    {/* Header with animated title */}
-                    <header className="mb-8">
-                        <h1 className="text-center orbitron text-3xl md:text-4xl mb-4">
-                            <span className="text-yellow-400">⚡</span> 
-                            Dual-Channel P-Channel MOSFET Power Switching Circuit 
-                            <span className="text-yellow-400">⚡</span>
-                        </h1>
-                        <div className="flex justify-center items-center h-12 overflow-hidden">
-                            <div className="animate-pulse flex space-x-2">
-                                {[...Array(3)].map((_, i) => (
-                                    <div key={i} className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-red-500' : i === 1 ? 'bg-green-500' : 'bg-blue-500'}`}></div>
-                                ))}
-                            </div>
-                        </div>
-                    </header>
+<h1 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Arial&size=30&color=F7931A&center=true&vCenter=true&width=900&height=60&lines=⚡+Power+Switching+Circuit+w%2F+P-Channel+MOSFETs+⚡;Hardware+Design+%7C+Power+Electronics+%7C+Embedded+Systems" alt="Typing Animation" />
+</h1>
 
-                    <main className="max-w-4xl mx-auto">
-                        {/* Overview Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">📘 Overview</h2>
-                            <p className="text-gray-300 leading-relaxed">
-                                The <strong>Dual-Channel P-Channel MOSFET Power Switching Circuit</strong> ensures <strong>instantaneous and seamless power transfer</strong> between primary (adapter) and backup (battery) sources.
-                                <br /><br />
-                                This MOSFET-based design achieves <strong>zero switching delay</strong>, offering <strong>reliable and efficient power management</strong> for embedded and IoT systems.
-                            </p>
-                            <p className="text-gray-300 mt-2">
-                                This circuit eliminates mechanical relays, ensuring <strong>noise-free, fast switching</strong>, and <strong>continuous power delivery</strong> to sensitive electronic systems.
-                            </p>
-                        </section>
+---
 
-                        {/* Key Features Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">⚙️ Key Features</h2>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-300">
-                                <li><strong>⚡ MOSFET-based high-side switching</strong> – instant power handover without relays</li>
-                                <li><strong>🔋 Dual power inputs</strong> (24 V adapter + 7.6 V battery) with automatic priority handling</li>
-                                <li><strong>🔄 Zero-delay switching</strong> using DMP4025LK3 MOSFETs</li>
-                                <li><strong>🧲 Reverse current protection</strong> via Schottky diodes (B540C)</li>
-                                <li><strong>🧠 Stability ensured</strong> using RC gate damping networks</li>
-                                <li><strong>🧩 Compact PCB-ready design</strong> simulated in LTspice and designed in Altium Designer</li>
-                            </ul>
-                        </section>
+## 💡 Project Overview
+> The **Dual-Channel P-Channel MOSFET Power Switching Circuit** ensures **instantaneous and seamless power transfer** between primary (adapter) and backup (battery) sources. This MOSFET-based design achieves **zero switching delay**, offering **reliable and highly efficient power management** for embedded and IoT systems.
 
-                        {/* Circuit Overview Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">🧠 Circuit Overview</h2>
-                            <p className="text-gray-300 mb-4">
-                                The design uses two P-channel MOSFETs (<strong>M1</strong>, <strong>M2</strong>) for automatic high-side switching.
-                            </p>
-                            <p className="text-gray-300 mb-2">
-                                - When the 24 V source is active, <strong>M1</strong> conducts and powers the load.
-                            </p>
-                            <p className="text-gray-300 mb-2">
-                                - If the adapter supply fails, <strong>M1</strong> turns off and <strong>M2</strong> (connected to the 7.6 V battery) activates instantly.
-                            </p>
-                            <p className="text-gray-300 mb-2">
-                                - <strong>Diodes D1 and D2 (B540C)</strong> block reverse current and protect the sources.
-                            </p>
-                            <p className="text-gray-300">
-                                - <strong>C1–C3</strong> capacitors stabilize voltage transients ensuring clean output.
-                            </p>
-                            
-                            <div className="mt-4 flex justify-center">
-                                <img src="https://placehold.co/800x300/e2e8f0/374151?text=Circuit+Schematic" alt="Circuit schematic showing two P-channel MOSFETs (M1 and M2), Schottky diodes (D1 and D2), resistors, capacitors, and power connections between 24V adapter, 7.6V battery, and load" className="rounded-lg shadow-lg max-w-full h-auto" />
-                            </div>
-                        </section>
+This circuit eliminates mechanical relays, guaranteeing **noise-free, ultra-fast switching**, and **continuous power delivery** to sensitive electronic loads, making it ideal for critical backup applications.
 
-                        {/* Components Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">🧩 Components Used</h2>
-                            <div className="overflow-x-auto">
-                                <table className="min-w-full bg-gray-800 rounded-lg overflow-hidden">
-                                    <thead>
-                                        <tr className="bg-gray-700">
-                                            <th className="py-2 px-4 text-left">Component</th>
-                                            <th className="py-2 px-4 text-left">Description</th>
-                                            <th className="py-2 px-4 text-left">Quantity</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">DMP4025LK3</td>
-                                            <td className="py-2 px-4">P-Channel Power MOSFET</td>
-                                            <td className="py-2 px-4">2</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">B540C</td>
-                                            <td className="py-2 px-4">Schottky Diode</td>
-                                            <td className="py-2 px-4">2</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">R1, R2</td>
-                                            <td className="py-2 px-4">4.7 kΩ Resistors</td>
-                                            <td className="py-2 px-4">2</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">C1, C2</td>
-                                            <td className="py-2 px-4">10 µF Capacitors</td>
-                                            <td className="py-2 px-4">2</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">C3</td>
-                                            <td className="py-2 px-4">1 µF Capacitor</td>
-                                            <td className="py-2 px-4">1</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">V1</td>
-                                            <td className="py-2 px-4">24 V DC Supply</td>
-                                            <td className="py-2 px-4">1</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">V3</td>
-                                            <td className="py-2 px-4">7.6 V Battery</td>
-                                            <td className="py-2 px-4">1</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 px-4">Load</td>
-                                            <td className="py-2 px-4">50 Ω Resistive Load</td>
-                                            <td className="py-2 px-4">1</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
+---
 
-                        {/* Tools & Simulation Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">🧰 Tools & Simulation</h2>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                <div className="bg-gray-700 px-4 py-2 rounded-md flex items-center">
-                                    <i className="fab fa-linux mr-2"></i>
-                                    <span>LTspice</span>
-                                </div>
-                                <div className="bg-gray-700 px-4 py-2 rounded-md flex items-center">
-                                    <i className="fas fa-microchip mr-2"></i>
-                                    <span>Altium Designer</span>
-                                </div>
-                                <div className="bg-gray-700 px-4 py-2 rounded-md flex items-center">
-                                    <i className="fas fa-tools mr-2"></i>
-                                    <span>Electronics Hardware Design</span>
-                                </div>
-                            </div>
-                            <p className="text-gray-300">
-                                - <strong>Simulation Tool:</strong> LTspice (for transient switching, delay, and voltage drop analysis)
-                            </p>
-                            <p className="text-gray-300">
-                                - <strong>PCB Design Tool:</strong> Altium Designer (layout optimization, component routing, and thermal considerations)
-                            </p>
-                            <p className="text-gray-300">
-                                - <strong>Validation:</strong> Bench-tested with oscilloscope to ensure uninterrupted power delivery
-                            </p>
-                        </section>
+## ⚙️ Key Features & Technical Specifications
 
-                        {/* Repository Files Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">🧾 Repository Files</h2>
-                            <div className="overflow-x-auto">
-                                <table className="min-w-full bg-gray-800 rounded-lg overflow-hidden">
-                                    <thead>
-                                        <tr className="bg-gray-700">
-                                            <th className="py-2 px-4 text-left">File</th>
-                                            <th className="py-2 px-4 text-left">Description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">schematic.png</td>
-                                            <td className="py-2 px-4">Circuit schematic image</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">Dual_Power_Switching_Circuit.asc</td>
-                                            <td className="py-2 px-4">LTspice simulation file</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">report.pdf</td>
-                                            <td className="py-2 px-4">Detailed design and analysis report</td>
-                                        </tr>
-                                        <tr className="border-b border-gray-700">
-                                            <td className="py-2 px-4">index.html</td>
-                                            <td className="py-2 px-4">Interactive project landing page</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="py-2 px-4">datasheet/</td>
-                                            <td className="py-2 px-4">Component datasheets and PCB files</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
+| Feature | Description | Benefit |
+| :--- | :--- | :--- |
+| ⚡ **Zero-Delay Switching** | Utilizes **DMP4025LK3 P-Channel MOSFETs** for high-side switching. | Ensures **uninterrupted power** during source failure. |
+| 🔋 **Dual Input Priority** | Automatically prioritizes the **24 V DC Adapter** over the **7.6 V Battery**. | Maximizes battery life and system reliability. |
+| 🛡️ **Reverse Current Protection** | Integrated **Schottky Diodes (B540C)** on both channels. | Prevents sources from charging/discharging each other, protecting the power supply. |
+| 🧠 **Gate Stability** | Includes dedicated **RC Gate Damping Networks** (R1, R2). | Minimizes transient ringing and ensures stable switching transitions. |
+| 🛠️ **Form Factor** | **Compact PCB-ready design** verified with simulation and bench testing. | Suitable for integration into small-scale embedded enclosures. |
 
-                        {/* Project Report Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">📄 Project Report</h2>
-                            <p className="text-gray-300">
-                                📘 <a href="#" className="text-blue-400 hover:text-blue-300 underline">View Full Report (PDF)</a>
-                            </p>
-                        </section>
+---
 
-                        {/* Applications Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">🧪 Applications</h2>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-300">
-                                <li>Industrial Energy Monitoring Systems (IEMS)</li>
-                                <li>Embedded IoT Devices</li>
-                                <li>Solar and Battery Power Systems</li>
-                                <li>UPS and Backup Power Units</li>
-                                <li>Portable Sensor Hubs</li>
-                            </ul>
-                        </section>
+## 🧠 Circuit Schematic & Operation
+The design employs two P-channel MOSFETs (**M1**, **M2**) for automatic high-side switching on the positive rail.
 
-                        {/* Simulation Snapshot Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">📈 Simulation Snapshot</h2>
-                            <div className="flex justify-center">
-                                <img src="https://placehold.co/800x300/e2e8f0/374151?text=Simulation+Waveform" alt="Simulation waveform showing smooth transition between 24V adapter and 7.6V battery power sources with zero delay" className="rounded-lg shadow-lg max-w-full h-auto" />
-                            </div>
-                        </section>
+- **Primary Source (24 V Adapter):** When active, this higher voltage source biases **M1** ON, powering the load.
+- **Backup Source (7.6 V Battery):** The lower voltage source remains OFF as long as 24 V is present.
+- **Power Failure:** If the 24 V adapter fails, **M1** rapidly turns OFF, and **M2** (connected to the battery) activates instantly, ensuring **seamless power handover**.
+- **Diodes D1 and D2 (B540C)** provide necessary isolation and blocking of reverse current paths.
+- **C1–C3** capacitors manage load voltage stability and filter transients.
 
-                        {/* Author Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">👨‍💻 Author</h2>
-                            <p className="text-gray-300 mb-2">
-                                <strong>Pramodh R S</strong>
-                            </p>
-                            <p className="text-gray-300 mb-4">
-                                Embedded Systems Engineer – PHYTEC Embedded Pvt. Ltd, Bengaluru
-                            </p>
-                            <p className="text-gray-300 mb-2">
-                                📬 <strong>Contact:</strong>
-                            </p>
-                            <div className="flex flex-wrap gap-3">
-                                <a href="mailto:rspramodh5@gmail.com" className="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md flex items-center transition duration-300">
-                                    <i className="far fa-envelope mr-2"></i>
-                                    Email
-                                </a>
-                                <a href="#" className="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md flex items-center transition duration-300">
-                                    <i className="fab fa-linkedin mr-2"></i>
-                                    LinkedIn
-                                </a>
-                                <a href="#" className="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md flex items-center transition duration-300">
-                                    <i className="fab fa-github mr-2"></i>
-                                    GitHub
-                                </a>
-                            </div>
-                        </section>
+<p align="center">
+  <img src="schematic.png" alt="Dual-Channel MOSFET Power Switching Circuit" width="700" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
+</p>
 
-                        {/* License Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">⚙️ License</h2>
-                            <p className="text-gray-300">
-                                This project is open-source under the <strong>MIT License</strong>. Feel free to use, modify, and improve the design with attribution.
-                            </p>
-                        </section>
+---
 
-                        {/* Acknowledgments Section */}
-                        <section className="mb-8">
-                            <h2 className="text-xl font-bold mb-3 text-teal-300">⭐ Acknowledgments</h2>
-                            <p className="text-gray-300">
-                                Special thanks to <strong>PHYTEC Embedded Pvt. Ltd</strong> for providing hardware and development support, and to the embedded design community for sharing valuable MOSFET switching resources.
-                            </p>
-                        </section>
-                    </main>
-                </div>
-            );
-        };
+## 🔬 Simulation Results: Zero Switching Delay
+The transient simulation in LTspice confirms the circuit's effectiveness in maintaining output voltage when the primary source drops.
 
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
-</body>
-</html>
+<p align="center">
+  <img src="waveform.png" alt="Simulation Waveform showing seamless power handover" width="700" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
+</p>
+
+> **Key Observation:** The output voltage remains stable across the transition, demonstrating **zero switching delay** and continuous power delivery to the 50 Ω load.
+
+---
+
+## 📦 Components Used
+| Component | Device | Purpose | Datasheet |
+| :--- | :--- | :--- | :--- |
+| **M1, M2** | DMP4025LK3 | P-Channel Power MOSFET (Switching) | [Link to Datasheet](datasheet/DMP4025LK3.pdf) |
+| **D1, D2** | B540C | 40V, 5A Schottky Diode (Isolation) | [Link to Datasheet](datasheet/B540C.pdf) |
+| **R1, R2** | 4.7 kΩ | Gate Damping / Biasing Resistors | |
+| **C1, C2** | 10 µF | Input/Output Decoupling | |
+| **V1** | 24 V DC | Primary Power Supply | |
+| **V3** | 7.6 V DC | Backup Battery Supply | |
+| **Load** | 50 Ω | Resistive Load | |
+
+---
+
+## 🛠️ Tools & Technologies
+<p align="center">
+  <img src="https://img.shields.io/badge/LTspice-A3001E?style=for-the-badge&logo=analog-devices&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Altium%20Designer-8B0000?style=for-the-badge&logo=altiumdesigner&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Verification-Bench%20Testing-green?style=for-the-badge"/>
+</p>
+
+* **Simulation & Analysis:** LTspice (used for transient switching, delay, and voltage drop analysis).
+* **PCB Design:** Altium Designer (used for layout optimization, component routing, and thermal management).
+* **Validation:** Bench-tested with an oscilloscope to confirm uninterrupted power delivery under stress.
+
+---
+
+## 📂 Repository Contents
+| File / Directory | Description |
+| :--- | :--- |
+| `schematic.png` | Main circuit schematic image. |
+| `waveform.png` | Screenshot of the LTspice transient simulation results. |
+| `report.pdf` | **Detailed design, analysis, and validation report.** |
+| `Dual_Power_Switching_Circuit.asc` | **LTspice simulation file** (open directly in LTspice). |
+| `datasheet/` | Component datasheets and Altium PCB design files. |
+| `index.html` | Interactive project landing page. |
+
+---
+
+## 🚀 Potential Applications
+The reliable, zero-delay switching makes this circuit ideal for systems where power continuity is critical.
+
+* **Embedded IoT Devices:** Ensuring sensors and microcontrollers remain powered during network drops or power outages.
+* **Industrial Energy Monitoring Systems (IEMS):** Maintaining continuous logging and data acquisition.
+* **Uninterruptible Power Supply (UPS) Units:** Used as a solid-state switch in low-power UPS designs.
+* **Portable Sensor Hubs:** Seamless transition between external power and internal battery.
+
+---
+
+## 👨‍💻 Author & Contact
+**Pramodh R S**  
+Embedded Systems Engineer – *PHYTEC Embedded Pvt. Ltd, Bengaluru*  
+
+| Platform | Link |
+| :--- | :--- |
+| 📧 Email | <a href="mailto:rspramodh5@gmail.com">rspramodh5@gmail.com</a> |
+| 🔗 LinkedIn | <a href="https://www.linkedin.com/in/pramodh-rs-3190692b6">Pramodh R S</a> |
+| 🐙 GitHub | <a href="https://github.com/Pramodh-RS2004">@Pramodh-RS2004</a> |
+
+---
+
+## 📝 License
+This project is open-source and available under the **MIT License**.
+
+> Feel free to use, modify, and improve the design with appropriate attribution.
+
+## ⭐ Acknowledgments
+Special thanks to **PHYTEC Embedded Pvt. Ltd** for providing hardware and development support, and to the embedded design community for sharing valuable MOSFET switching resources.

@@ -1,7 +1,7 @@
 
 
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Arial&size=30&color=F7931A&center=true&vCenter=true&width=900&height=60&lines=⚡+Power+Switching+Circuit+w%2F+P-Channel+MOSFETs+⚡;Hardware+Design+%7C+Power+Electronics+%7C+Embedded+Systems" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Arial&size=30&color=F7931A&center=true&vCenter=true&width=900&height=60&lines=⚡+Dual-Power+Switching+Circuit+w%2F+P-Channel+MOSFETs+⚡;Hardware+Design+%7C+Power+Electronics+%7C+Embedded+Systems" alt="Typing Animation" />
 </h1>
 
 ---

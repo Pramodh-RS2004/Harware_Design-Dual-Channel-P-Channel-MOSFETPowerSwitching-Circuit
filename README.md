@@ -44,14 +44,18 @@ The design employs two P-channel MOSFETs (**M1**, **M2**) for automatic high-sid
 - **Diodes D1 and D2 (B540C)** provide necessary isolation and blocking of reverse current paths.
 - **C1–C3** capacitors manage load voltage stability and filter transients.
 
-
+<p align="center">
+  <img src="schematic.png" alt="Dual-Channel MOSFET Power Switching Circuit" width="700" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
+</p>
 
 ---
 
 ## 🔬 Simulation Results: Zero Switching Delay
 The transient simulation in LTspice confirms the circuit's effectiveness in maintaining output voltage when the primary source drops.
 
-
+<p align="center">
+  <img src="waveform.png" alt="Simulation Waveform showing seamless power handover" width="700" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
+</p>
 
 > **Key Observation:** The output voltage remains stable across the transition, demonstrating **zero switching delay** and continuous power delivery to the 50 Ω load.
 

@@ -50,12 +50,7 @@ The design employs two P-channel MOSFETs (**M1**, **M2**) for automatic high-sid
 
 ---
 
-## 🔬 Simulation Results: Zero Switching Delay
-The transient simulation in LTspice confirms the circuit's effectiveness in maintaining output voltage when the primary source drops.
 
-<p align="center">
-  <img src="waveform.png" alt="Simulation Waveform showing seamless power handover" width="700" style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;"/>
-</p>
 
 > **Key Observation:** The output voltage remains stable across the transition, demonstrating **zero switching delay** and continuous power delivery to the 50 Ω load.
 
@@ -87,15 +82,6 @@ The transient simulation in LTspice confirms the circuit's effectiveness in main
 
 ---
 
-## 📂 Repository Contents
-| File / Directory | Description |
-| :--- | :--- |
-| `schematic.png` | Main circuit schematic image. |
-| `waveform.png` | Screenshot of the LTspice transient simulation results. |
-| `report.pdf` | **Detailed design, analysis, and validation report.** |
-| `Dual_Power_Switching_Circuit.asc` | **LTspice simulation file** (open directly in LTspice). |
-| `datasheet/` | Component datasheets and Altium PCB design files. |
-| `index.html` | Interactive project landing page. |
 
 ---
 

@@ -42,7 +42,7 @@ The design employs two P-channel MOSFETs (**M1**, **M2**) for automatic high-sid
 
 
 
-> **Key Observation:** The output voltage remains stable across the transition, demonstrating **zero switching delay** and continuous power delivery to the 50 Ω load.
+
 
 ---
 

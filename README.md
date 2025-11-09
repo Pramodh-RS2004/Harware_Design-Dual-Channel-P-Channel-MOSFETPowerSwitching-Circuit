@@ -48,7 +48,7 @@ The design employs two P-channel MOSFETs (**M1**, **M2**) for automatic high-sid
 ## 📦 Components Used
 | Component | Device | Purpose | Datasheet |
 | :--- | :--- | :--- | :--- |
-| **M1, M2** | DMP4025LK3 | P-Channel Power MOSFET (Switching) | [Link to Datasheet](datasheet/DMP4025LK3.pdf) |
+| **M1, M2** | DMP4025LK3 | P-Channel Power MOSFET (Switching) | [Link to Datasheet](https://www.diodes.com/assets/Datasheets/products_inactive_data/DMP4025LK3.pdf) |
 | **D1, D2** | B540C | 40V, 5A Schottky Diode (Isolation) | [Link to Datasheet](datasheet/B540C.pdf) |
 | **R1, R2** | 4.7 kΩ | Gate Damping / Biasing Resistors | |
 | **C1, C2** | 10 µF | Input/Output Decoupling | |

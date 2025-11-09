@@ -69,7 +69,7 @@ The design employs two P-channel MOSFETs (**M1**, **M2**) for automatic high-sid
 * **PCB Design:** Altium Designer (used for layout optimization, component routing, and thermal management).
 * **Validation:** Bench-tested with an oscilloscope to confirm uninterrupted power delivery under stress.
 
----
+
 
 
 ---
